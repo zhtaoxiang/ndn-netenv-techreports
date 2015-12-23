@@ -308,40 +308,82 @@ What schema?
 
 \input{physical-activity-schema-json}
 
-The proposed data namespace is shown in Figure~\ref{fig:NDNFit-namespace}.  Its components are discussed briefly here:
+The proposed data namespace is shown in Figure~\ref{fig:NDNFit-namespace}. Its components are discussed briefly here (The black part is what we have reached agreement on, and the gray part is what needs more discussions and feedbacks):
 
-\begin{addmargin}[2em]{0em}
-    \url{dsu_root/user_root/ndnfit}: All data published by the user for the application is under the \url{ndnfit} child of a globally accessible namespace published by the DSU / personal data vault provider \emph{of that user}. Other temporary namespaces may be used for communication but none shall be considered permanent or authoritative.  
-    \begin{addmargin}[2em]{0em}
-        \url{samples/physical_activity}: The \url{samples} namespace holds the data for the ndnfit application, organized with children whose names describe the data type. For data under this hierarchy, the payload type is JSON. (Need to specify encryption details.)
-            \begin{addmargin}[2em]{0em}
-                \url{raw/location}: This namespace holds the raw time-location traces gathered by the user's Ohmage Mobility client. 
-                \begin{addmargin}[2em]{0em}
-                    \url{<start_timestamp>/<end_timestamp>}: A timestamp range is provided in the name space to allow retrieval of specific time ranges for data without having to read the data or an index.
-                \end{addmargin}
-                \url{classified}: Data under this child has been segmented into classified physical activity bouts (e.g., ``walking'') by a DPU and published into the user's ndnfit namespace. (Note this may be done by the Ohmage Mobility client itself in the first version.)                      
-                \begin{addmargin}[2em]{0em}
-                        \url{bout/<sequence_index>/<activity_name>}: The namespace for classified data is organized into sequential bouts of physical activity, such as \url{bout/2091/walking}.  Start and end timestamps are provided in the child name for consistency with raw data. 
-                        \\ \url{period/<start_timestamp>/<end_timestamp>}: This namespace allows interests with simple selectors to be used to easily retrieve a link to the sequence\_index for a given time period. 
-                    \end{addmargin}
-            \end{addmargin} 
-                \url{auth/physical_activity}: The \url{auth} subtree contains signed keys (or key fingerprints?) for authorized applications, and symmetric keys where needed. The child namespace follows the same structure as the \url{samples} namespace. At any point in the hierarchy, verbs such as \url{READ} are introduced as nodes, with keys underneath them signed by an ndnfit user key associated with that hierarchy, such as the child of \url{identity} shown in the Figure.   This authorizes the key to take the action associated with the verb at that level of the data hierarchy or below.  Because it must also provide access to the appropriate symmetric key, READ access is authorized for specific time periods (each potentially signed with a different symmetric key) only; this is shown in the Figure.  \textbf{Important note:} To bootstrap this approach, the authorizing application must be able to trust that the public key it is signing / using to encrypt belongs to the correct service. For now, we assume that these keys can be verified using a hierarchical trust model such as that deployed on the testbed.  (e.g., \url{/edu/ucla/test_dsu}, where \url{test_dsu}'s root key is signed by the UCLA site key.  
-                \\ \url{identity}: This subtree stores the certificates used to identify the user to other applications in the system in various context. 
-            \begin{addmargin}[2em]{0em}
-                \url{publisher/physical_activity}
-                \\ \url{ndnfit_viz}
-            \end{addmargin} 
-        \url{config}
-    \end{addmargin} 
+\begin{itemize}
+\item Trust anchor
+
+The root \url{/org/openmhealth} is the trust anchor of NDNFit, users get identities and certificates from the trust anchor. 
+
+\item DPU and DVU
+
+NDNFit-provided DPU and DVU have identities of the format \url{/org/openmhealth/<service-id>}, they get identities and certificates from the trust anchor. Notice that non-NDNFit-provided DPU and DVU can have identities of other format, such as \url{/edu/ucla/cs/irl/speed-caculator}, \url{/edu/ucla/remap/distance-caculator} and so on.
+
+\item User's data
+
+Each user has an identity \url{/org/openmhealth/<user-id>}. Users get identities and certificates from the trust anchor.
+
+A user can possess multiple mobile devices, to differentiate them, the user can further assign identity \url{/org/openmhealth/<user-id>/<device-id>} and issue certificate to each of them.
+
+\begin{itemize}
+	\item Data - data branch
+	
+	The original Data has 3 levels of types. In the example (so the first implementation), they are \url{fitness}(first level), \url{physical_activity}(second level) and \url{time_location}(third level). Under \url{time_location node}, there are 3 branches. The leftmost branch stands for captured data. Each data packet can have multiple samples (time location points) in it, in which case the timestamp component in its name is the start timestamp of all the samples. The middle branch is catalog. Catalogs are generated every 10 minutes (or other more appropriate time interval), the timestamp components in their names must be \url{YYYY-MM-DDTHH:MM:00Z}. Each catalog data packet contains all the names of captured data whose timestamp falls into the time span (this catalog's timestamp ~ next catalog's timestamp). The rightmost branch is C-KEY which is used for data access control, we will discuss this in data access control section.
+	
+	The DPU-processed data are published in the bout branch. Similar to the original data branch, the leftmost branch stands for processed data, the middle branch stands for catalog, and the rightmost branch is C-KEY.
+	
+	\item Data access control - read branch
+	
+	Name-based access control is used here. Take captured data as an example to illustrate how it works here in NDNFit.
+	
+	Every hour, a new C-KEY (symmetric key) is generated and used to encrypt all the captured data in this hour. The C-KEY is encrypted by the E-KEY of each access group who has access to the corresponding captured data, and is named \url{/<prefix>/C-KEY/<start_timestamp_hour>/<end_timestamp_hour>/<E-KEY name>}. The \url{start_timestamp_hour} and \url{end_timestamp_hour} are the start and end hour points when the C-KEY is valid. For each access group, the E-KEY and D-KEY (asymmetric key pair) are also generated periodically (the period is not fixed to 1 hour). The E-KEY is named
+	\url{/<prefix>/E-KEY/<start_timestamp_hour>/<end_timestamp_hour>/}; and the D-KEY is encrypted for each member (data consumer) of this access group and named \url{/<prefix>/D-KEY/<start_timestamp_hour>/<end_timestamp_hour>/for/<consumer-id>}. Notice that in this case, all the C-KEYs, E-KEYs and D-KEYs are generated by the user.
+	
+	For the DPU-processed data (the bout branch), it's a little complicated. In this case, the C-KEY should be generated by the DPU, and then it should be sent back to the user (the C-KEY should be encrypted only for the user) to be encrypted by some access groups? E-KEYs. All the other steps are the same as the previous.
+	
+	\item Data publish control - write branch
+	
+	When a DPU processes user's data, it should use some valid signing key to sign the processed results. The signing key pair is generated by the DPU, the private key is kept by the DPU and the public key is sent back to the user. Then the user checks whether the public key is named properly (so data consumers can validate the signature of processed results according to trust schema), if it is, the user can sign and publish this public key. The name structure of this public key is similar to that of D-KEYs.
+	
+
+\end{itemize}
+\item User group
+	
+Some users can form groups. Groups have identities of the format \url{/org/openmhealth/<group-id>}. This is not part of first implementation. Details will be discussed in the future.
+
+\end{itemize}
 
 
-\end{addmargin}
+%\begin{addmargin}[2em]{0em}
+%    \url{dsu_root/user_root/ndnfit}: All data published by the user for the application is under the \url{ndnfit} child of a globally accessible namespace published by the DSU / personal data vault provider \emph{of that user}. Other temporary namespaces may be used for communication but none shall be considered permanent or authoritative.  
+%    \begin{addmargin}[2em]{0em}
+%        \url{samples/physical_activity}: The \url{samples} namespace holds the data for the ndnfit application, organized with children whose names describe the data type. For data under this hierarchy, the payload type is JSON. (Need to specify encryption details.)
+%            \begin{addmargin}[2em]{0em}
+%                \url{raw/location}: This namespace holds the raw time-location traces gathered by the user's Ohmage Mobility client. 
+%                \begin{addmargin}[2em]{0em}
+%                    \url{<start_timestamp>/<end_timestamp>}: A timestamp range is provided in the name space to allow retrieval of specific time ranges for data without having to read the data or an index.
+%                \end{addmargin}
+%                \url{classified}: Data under this child has been segmented into classified physical activity bouts (e.g., ``walking'') by a DPU and published into the user's ndnfit namespace. (Note this may be done by the Ohmage Mobility client itself in the first version.)                      
+%                \begin{addmargin}[2em]{0em}
+%                        \url{bout/<sequence_index>/<activity_name>}: The namespace for classified data is organized into sequential bouts of physical activity, such as \url{bout/2091/walking}.  Start and end timestamps are provided in the child name for consistency with raw data. 
+%                        \\ \url{period/<start_timestamp>/<end_timestamp>}: This namespace allows interests with simple selectors to be used to easily retrieve a link to the sequence\_index for a given time period. 
+%                    \end{addmargin}
+%            \end{addmargin} 
+%                \url{auth/physical_activity}: The \url{auth} subtree contains signed keys (or key fingerprints?) for authorized applications, and symmetric keys where needed. The child namespace follows the same structure as the \url{samples} namespace. At any point in the hierarchy, verbs such as \url{READ} are introduced as nodes, with keys underneath them signed by an ndnfit user key associated with that hierarchy, such as the child of \url{identity} shown in the Figure.   This authorizes the key to take the action associated with the verb at that level of the data hierarchy or below.  Because it must also provide access to the appropriate symmetric key, READ access is authorized for specific time periods (each potentially signed with a different symmetric key) only; this is shown in the Figure.  \textbf{Important note:} To bootstrap this approach, the authorizing application must be able to trust that the public key it is signing / using to encrypt belongs to the correct service. For now, we assume that these keys can be verified using a hierarchical trust model such as that deployed on the testbed.  (e.g., \url{/edu/ucla/test_dsu}, where \url{test_dsu}'s root key is signed by the UCLA site key.  
+%                \\ \url{identity}: This subtree stores the certificates used to identify the user to other applications in the system in various context. 
+%            \begin{addmargin}[2em]{0em}
+%                \url{publisher/physical_activity}
+%                \\ \url{ndnfit_viz}
+%            \end{addmargin} 
+%        \url{config}
+%    \end{addmargin} 
+%\end{addmargin}
 
 
 \begin{figure}
 \begin{center}
-\includegraphics[width=1\textwidth]{figures/NDNFit-name-top-01}
-\caption{NDNFit Namespace, version 1.}
+\includegraphics[width=0.65\textwidth]{figures/NDNFit-name-top-02}
+\caption{NDNFit Namespace, version 2.}
 \label{fig:NDNFit-namespace}
 \end{center}
 \end{figure}

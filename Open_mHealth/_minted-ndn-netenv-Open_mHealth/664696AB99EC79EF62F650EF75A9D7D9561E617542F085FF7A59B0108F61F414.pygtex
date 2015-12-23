@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}schema\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://json\PYGZhy{}schema.org/draft\PYGZhy{}04/schema\PYGZsh{}\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The name(s) of the physical activity(ies) in which the person is engaged. It is recommended that the activity name be drawn from the CDC guidelines to facilitate mapping to standard energy expenditure values (METs)\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}references\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The SNOMED code represents Activity\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://purl.bioontology.org/ontology/SNOMEDCT/257733005\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}
+             \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}CDC guidelines on standard energy expenditure values (METs).\PYGZdq{}}\PYG{p}{,}
+             \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://www.startwalkingnow.org/documents/PA\PYGZus{}Intensity\PYGZus{}table\PYGZus{}2\PYGZus{}1.pdf\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{],}
+    \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}string\PYGZdq{}}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

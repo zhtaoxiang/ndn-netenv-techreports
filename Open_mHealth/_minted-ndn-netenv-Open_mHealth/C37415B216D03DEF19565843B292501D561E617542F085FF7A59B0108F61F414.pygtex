@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}schema\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://json\PYGZhy{}schema.org/draft\PYGZhy{}04/schema\PYGZsh{}\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}This schema represents a numerical value with a unit of measure.\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}object\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}properties\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}value\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The numeric value of the element.\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}number\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{l+s+s2}{\PYGZdq{}unit\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}references\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The unit of measure of the element. Allowed values are drawn from the Common synonyms (non\PYGZhy{}UCUM) column of [subset of] UCUM, SI and English units. \PYGZdq{}}\PYG{p}{,}
+                    \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://www.hl7.de/download/documents/ucum/ucumdata.html\PYGZdq{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{],}
+            \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}string\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{},}
+    \PYG{l+s+s2}{\PYGZdq{}required\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+        \PYG{l+s+s2}{\PYGZdq{}value\PYGZdq{}}\PYG{p}{,}
+        \PYG{l+s+s2}{\PYGZdq{}unit\PYGZdq{}}
+    \PYG{p}{]}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

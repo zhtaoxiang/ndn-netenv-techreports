@@ -1,0 +1,44 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}schema\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://json\PYGZhy{}schema.org/draft\PYGZhy{}04/schema\PYGZsh{}\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}This schema describes a time frame as a point in time or a time interval.\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}object\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}references\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The SNOMED codes represent Time frame (qualifier value).\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://purl.bioontology.org/ontology/SNOMEDCT/7389001\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{],}
+
+    \PYG{l+s+s2}{\PYGZdq{}definitions\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}date\PYGZus{}time\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}date\PYGZhy{}time\PYGZhy{}1.0.json\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+
+        \PYG{l+s+s2}{\PYGZdq{}time\PYGZus{}interval\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}time\PYGZhy{}interval\PYGZhy{}1.0.json\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{},}
+
+    \PYG{l+s+s2}{\PYGZdq{}oneOf\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}properties\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}date\PYGZus{}time\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/date\PYGZus{}time\PYGZdq{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{},}
+            \PYG{l+s+s2}{\PYGZdq{}required\PYGZdq{}}\PYG{o}{:} \PYG{p}{[} \PYG{l+s+s2}{\PYGZdq{}date\PYGZus{}time\PYGZdq{}}\PYG{p}{]}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}properties\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}time\PYGZus{}interval\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/time\PYGZus{}interval\PYGZdq{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{},}
+            \PYG{l+s+s2}{\PYGZdq{}required\PYGZdq{}}\PYG{o}{:} \PYG{p}{[} \PYG{l+s+s2}{\PYGZdq{}time\PYGZus{}interval\PYGZdq{}}\PYG{p}{]}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{]}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,45 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}schema\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://json\PYGZhy{}schema.org/draft\PYGZhy{}04/schema\PYGZsh{}\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}This schema represents a single episode of physical activity.\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}object\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}references\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The SNOMED code represents Physical activity (observable entity)\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://purl.bioontology.org/ontology/SNOMEDCT/68130003\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{],}
+    \PYG{l+s+s2}{\PYGZdq{}definitions\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}activity\PYGZus{}name\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}activity\PYGZhy{}name\PYGZhy{}1.0.json\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{l+s+s2}{\PYGZdq{}length\PYGZus{}unit\PYGZus{}value\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}../generic/length\PYGZhy{}unit\PYGZhy{}value\PYGZhy{}1.0.json\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{l+s+s2}{\PYGZdq{}time\PYGZus{}frame\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}../generic/time\PYGZhy{}frame\PYGZhy{}1.0.json\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{},}
+
+    \PYG{l+s+s2}{\PYGZdq{}properties\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}activity\PYGZus{}name\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/activity\PYGZus{}name\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{l+s+s2}{\PYGZdq{}effective\PYGZus{}time\PYGZus{}frame\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/time\PYGZus{}frame\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{l+s+s2}{\PYGZdq{}distance\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The distance covered, if applicable.\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/length\PYGZus{}unit\PYGZus{}value\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{l+s+s2}{\PYGZdq{}reported\PYGZus{}activity\PYGZus{}intensity\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}Self\PYGZhy{}reported intensity of the activity performed.\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}string\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}enum\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}light\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}moderate\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}vigorous\PYGZdq{}}\PYG{p}{]}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{},}
+
+    \PYG{l+s+s2}{\PYGZdq{}required\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}activity\PYGZus{}name\PYGZdq{}}\PYG{p}{]}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

@@ -1,0 +1,84 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}schema\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://json\PYGZhy{}schema.org/draft\PYGZhy{}04/schema\PYGZsh{}\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}This schema describes an interval of time. In the absence of a precise start and/or end time, the time interval can be described as a date + a part of the day (morning, afternoon, evening, night). No commitments are made as to whether the start or end time point itself is included in the interval (i.e., whether the defined interval includes the boundary point(s) or not).\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}object\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}references\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The NCIT codes represent Timespan (synonym: time interval).\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl\PYGZsh{}C68594\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{],}
+
+    \PYG{l+s+s2}{\PYGZdq{}definitions\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+        \PYG{l+s+s2}{\PYGZdq{}date\PYGZus{}time\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}date\PYGZhy{}time\PYGZhy{}1.0.json\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{l+s+s2}{\PYGZdq{}duration\PYGZhy{}unit\PYGZhy{}value\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}duration\PYGZhy{}unit\PYGZhy{}value\PYGZhy{}1.0.json\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{l+s+s2}{\PYGZdq{}full\PYGZus{}date\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}string\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}references\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+                \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}This schema represents a date. See RFC 3339 5.6 for details.\PYGZdq{}}\PYG{p}{,}
+                    \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://tools.ietf.org/html/rfc3339\PYGZdq{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{],}
+            \PYG{l+s+s2}{\PYGZdq{}pattern\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZca{}[0\PYGZhy{}9]\PYGZob{}4\PYGZcb{}\PYGZhy{}[0\PYGZhy{}9]\PYGZob{}2\PYGZcb{}\PYGZhy{}[0\PYGZhy{}9]\PYGZob{}2\PYGZcb{}\PYGZdl{}\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{l+s+s2}{\PYGZdq{}part\PYGZus{}of\PYGZus{}day\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}part\PYGZhy{}of\PYGZhy{}day\PYGZhy{}1.0.json\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{\PYGZcb{},}
+
+    \PYG{l+s+s2}{\PYGZdq{}oneOf\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}properties\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}start\PYGZus{}date\PYGZus{}time\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/date\PYGZus{}time\PYGZdq{}}
+                \PYG{p}{\PYGZcb{},}
+                \PYG{l+s+s2}{\PYGZdq{}duration\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/duration\PYGZhy{}unit\PYGZhy{}value\PYGZdq{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{},}
+            \PYG{l+s+s2}{\PYGZdq{}required\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}start\PYGZus{}date\PYGZus{}time\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}duration\PYGZdq{}}\PYG{p}{]}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}properties\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}end\PYGZus{}date\PYGZus{}time\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/date\PYGZus{}time\PYGZdq{}}
+                \PYG{p}{\PYGZcb{},}
+                \PYG{l+s+s2}{\PYGZdq{}duration\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/duration\PYGZhy{}unit\PYGZhy{}value\PYGZdq{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{},}
+            \PYG{l+s+s2}{\PYGZdq{}required\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}end\PYGZus{}date\PYGZus{}time\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}duration\PYGZdq{}}\PYG{p}{]}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}properties\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}start\PYGZus{}date\PYGZus{}time\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/date\PYGZus{}time\PYGZdq{}}
+                \PYG{p}{\PYGZcb{},}
+                \PYG{l+s+s2}{\PYGZdq{}end\PYGZus{}date\PYGZus{}time\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/date\PYGZus{}time\PYGZdq{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{},}
+            \PYG{l+s+s2}{\PYGZdq{}required\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}start\PYGZus{}date\PYGZus{}time\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}end\PYGZus{}date\PYGZus{}time\PYGZdq{}}\PYG{p}{]}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}properties\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}date\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/full\PYGZus{}date\PYGZdq{}}
+                \PYG{p}{\PYGZcb{},}
+                \PYG{l+s+s2}{\PYGZdq{}part\PYGZus{}of\PYGZus{}day\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}\PYGZsh{}/definitions/part\PYGZus{}of\PYGZus{}day\PYGZdq{}}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{},}
+            \PYG{l+s+s2}{\PYGZdq{}required\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}date\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}part\PYGZus{}of\PYGZus{}day\PYGZdq{}}\PYG{p}{]}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{]}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

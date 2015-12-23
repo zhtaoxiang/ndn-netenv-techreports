@@ -1,0 +1,47 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}schema\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://json\PYGZhy{}schema.org/draft\PYGZhy{}04/schema\PYGZsh{}\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}This schema represents a duration or length of time.\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}object\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}references\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The SNOMED code represents Duration (qualifier value)\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://purl.bioontology.org/ontology/SNOMEDCT/103335007\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{],}
+
+    \PYG{l+s+s2}{\PYGZdq{}allOf\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}unit\PYGZhy{}value\PYGZhy{}1.0.json\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}properties\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}unit\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}references\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+                        \PYG{p}{\PYGZob{}}
+                            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The unit of measure of the element. Basic unit is second (s). Allowed values are drawn from the Time Units Common Synonyms (non\PYGZhy{}UCUM). The valid UCUM code is different for second (s), month (mo) and year (a).\PYGZdq{}}\PYG{p}{,}
+                            \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://www.hl7.de/download/documents/ucum/ucumdata.html\PYGZdq{}}
+                        \PYG{p}{\PYGZcb{}}
+                    \PYG{p}{],}
+                    \PYG{l+s+s2}{\PYGZdq{}enum\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+                        \PYG{l+s+s2}{\PYGZdq{}ps\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}ns\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}us\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}ms\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}sec\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}min\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}h\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}d\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}wk\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}Mo\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}yr\PYGZdq{}}
+                    \PYG{p}{]}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{]}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

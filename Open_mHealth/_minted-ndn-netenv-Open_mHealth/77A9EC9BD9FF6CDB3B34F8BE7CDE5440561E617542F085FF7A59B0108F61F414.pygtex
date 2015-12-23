@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}schema\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://json\PYGZhy{}schema.org/draft\PYGZhy{}04/schema\PYGZsh{}\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The period of time in which a day is commonly divided.\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}string\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}references\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}value\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}morning\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The SNOMED code represents morning (temporal qualifier)\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://purl.bioontology.org/ontology/SNOMEDCT/73775008\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}value\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}afternoon\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The SNOMED code represents afternoon (temporal qualifier)\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://purl.bioontology.org/ontology/SNOMEDCT/422133006\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}value\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}evening\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The SNOMED code represents evening (temporal qualifier)\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://purl.bioontology.org/ontology/SNOMEDCT/3157002\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}value\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}night\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The SNOMED code represents night time (temporal qualifier)\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://purl.bioontology.org/ontology/SNOMEDCT/2546009\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{],}
+    \PYG{l+s+s2}{\PYGZdq{}enum\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}\PYG{l+s+s2}{\PYGZdq{}morning\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}afternoon\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}evening\PYGZdq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}night\PYGZdq{}}\PYG{p}{]}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

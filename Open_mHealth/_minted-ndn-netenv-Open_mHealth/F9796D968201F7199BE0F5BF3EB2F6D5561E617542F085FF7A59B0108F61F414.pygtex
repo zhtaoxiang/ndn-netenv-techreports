@@ -1,0 +1,47 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{\PYGZob{}}
+    \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}schema\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://json\PYGZhy{}schema.org/draft\PYGZhy{}04/schema\PYGZsh{}\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}This schema represents a length or a distance.\PYGZdq{}}\PYG{p}{,}
+    \PYG{l+s+s2}{\PYGZdq{}type\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}object\PYGZdq{}}\PYG{p}{,}
+
+    \PYG{l+s+s2}{\PYGZdq{}references\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The SNOMED code represents Length\PYGZdq{}}\PYG{p}{,}
+            \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://purl.bioontology.org/ontology/SNOMEDCT/410668003\PYGZdq{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{],}
+
+    \PYG{l+s+s2}{\PYGZdq{}allOf\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}\PYGZdl{}ref\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}unit\PYGZhy{}value\PYGZhy{}1.0.json\PYGZdq{}}
+        \PYG{p}{\PYGZcb{},}
+        \PYG{p}{\PYGZob{}}
+            \PYG{l+s+s2}{\PYGZdq{}properties\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                \PYG{l+s+s2}{\PYGZdq{}unit\PYGZdq{}}\PYG{o}{:} \PYG{p}{\PYGZob{}}
+                    \PYG{l+s+s2}{\PYGZdq{}references\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+                        \PYG{p}{\PYGZob{}}
+                            \PYG{l+s+s2}{\PYGZdq{}description\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}The unit of measure of the element. Basic unit is meter (m) [ http://unitsofmeasure.org/ucum.html\PYGZsh{}para\PYGZhy{}28 ]. Allowed values are drawn from the SI Length Units and English Length Units Common Synonyms (non\PYGZhy{}UCUM). The valid UCUM code is different for inch ([in\PYGZus{}i]), foot ([ft\PYGZus{}i]), yard ([yd\PYGZus{}i]) and mile ([mi\PYGZus{}i]).\PYGZdq{}}\PYG{p}{,}
+                            \PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{o}{:} \PYG{l+s+s2}{\PYGZdq{}http://www.hl7.de/download/documents/ucum/ucumdata.html\PYGZdq{}}
+                        \PYG{p}{\PYGZcb{}}
+                    \PYG{p}{],}
+                    \PYG{l+s+s2}{\PYGZdq{}enum\PYGZdq{}}\PYG{o}{:} \PYG{p}{[}
+                        \PYG{l+s+s2}{\PYGZdq{}fm\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}pm\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}nm\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}um\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}mm\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}cm\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}m\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}km\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}in\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}ft\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}yd\PYGZdq{}}\PYG{p}{,}
+                        \PYG{l+s+s2}{\PYGZdq{}mi\PYGZdq{}}
+                    \PYG{p}{]}
+                \PYG{p}{\PYGZcb{}}
+            \PYG{p}{\PYGZcb{}}
+        \PYG{p}{\PYGZcb{}}
+    \PYG{p}{]}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}
